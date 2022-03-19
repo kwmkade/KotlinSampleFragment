@@ -5,15 +5,15 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.kwmkade.kotlinsamplefragment.databinding.FragmentItemBinding
+import com.kwmkade.kotlinsamplefragment.databinding.FragmentCardBinding
 
-class ItemRecyclerViewAdapter : RecyclerView.Adapter<ItemRecyclerViewAdapter.ViewHolder>() {
+class CardRecyclerViewAdapter : RecyclerView.Adapter<CardRecyclerViewAdapter.ViewHolder>() {
 
     private val _itemList = mutableListOf<ItemViewModel.Item>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            FragmentItemBinding.inflate(
+            FragmentCardBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
@@ -34,8 +34,8 @@ class ItemRecyclerViewAdapter : RecyclerView.Adapter<ItemRecyclerViewAdapter.Vie
 
     override fun getItemCount(): Int = _itemList.size
 
-    inner class ViewHolder(binding: FragmentItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        val contentView: TextView = binding.itemContent
+    inner class ViewHolder(binding: FragmentCardBinding) : RecyclerView.ViewHolder(binding.root) {
+        val contentView: TextView = binding.cardContent
 
         override fun toString(): String {
             return super.toString() + " '" + contentView.text + "'"
